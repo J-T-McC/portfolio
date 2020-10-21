@@ -1,26 +1,28 @@
 <template>
-  <section-break
-      gradient-from="from-purple-400"
-      gradient-via="via-pink-400"
-      gradient-to="to-blue-500"
-      animation="animate-gradient-xy">
-  </section-break>
-  <div class="bg-gradient-to-r from-white via-white to-gray-200 pt-6 lg:pt-0">
-    <card-row
-        v-for="(card, i) in cards"
-        v-bind:key="card"
-        :header="card.header"
-        :date="card.date"
-        :body="card.body"
-        :reverse="i % 2 === 0"
-        :index="i">
-    </card-row>
+  <div id="about">
     <section-break
-        gradient-from="from-purple-200"
-        gradient-via="via-pink-200"
+        gradient-from="from-purple-400"
+        gradient-via="via-pink-400"
         gradient-to="to-blue-500"
         animation="animate-gradient-xy">
     </section-break>
+    <div class="bg-gradient-to-r from-white via-white to-gray-200 pt-6 lg:pt-0">
+      <card-row
+          v-for="(card, i) in cards"
+          v-bind:key="card"
+          :header="card.header"
+          :date="card.date"
+          :body="card.body"
+          :reverse="i % 2 === 0"
+          :index="i">
+      </card-row>
+      <section-break
+          gradient-from="from-purple-200"
+          gradient-via="via-pink-200"
+          gradient-to="to-blue-500"
+          animation="animate-gradient-xy">
+      </section-break>
+    </div>
   </div>
 </template>
 

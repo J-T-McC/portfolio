@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-blue-500 overflow-hidden">
+  <div class="relative bg-blue-500 overflow-hidden" id="contact">
     <div class="lg:w-1/2 max-w-screen-xl">
       <div class="relative bg-blue-500 lg:w-full hidden lg:block ">
         <img class="w-full object-cover lg:w-full" src="@/assets/images/banner.jpg" alt="">
@@ -9,7 +9,7 @@
 <!--          &lt;!&ndash;          <polygon points="100,0 100,0 100,100 0,100"/>&ndash;&gt;-->
 <!--        </svg>-->
       </div>
-      <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2" >
         <div class="flex flex-col h-full w-full items-center justify-center py-6 px-6 bg-blue-500">
           <section-header>Contact Me</section-header>
           <form class="w-full max-w-lg">
