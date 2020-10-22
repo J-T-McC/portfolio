@@ -12,7 +12,7 @@
       <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <div class="flex flex-col h-full w-full items-center justify-center py-6 px-6 bg-blue-500">
           <section-header>Contact Me</section-header>
-          <form class="w-full max-w-lg" name="contact" data-netlify="true">
+          <form class="w-full max-w-lg" name="contact" @submit="handleSubmit" netlify>
             <div class="flex flex-wrap ">
               <div class="w-full">
                 <label class="sr-only" for="email">
@@ -42,9 +42,8 @@
             <div class="md:flex md:items-center">
               <div class="md:w-1/3">
                 <button
-                    @click="handleSubmit"
                     class="border border-transparent text-base leading-6 font-medium rounded-md text-blue-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition duration-150 ease-in-out py-2 px-4"
-                    type="button">
+                    type="submit">
                   Send
                 </button>
               </div>
