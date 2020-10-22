@@ -12,7 +12,7 @@
       <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <div class="flex flex-col h-full w-full items-center justify-center py-6 px-6 bg-blue-500">
           <section-header>Contact Me</section-header>
-          <form class="w-full max-w-lg" name="contact">
+          <form class="w-full max-w-lg" name="contact" data-netlify="true">
             <div class="flex flex-wrap ">
               <div class="w-full">
                 <label class="sr-only" for="email">
