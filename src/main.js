@@ -1,8 +1,10 @@
 import { createApp } from 'vue'
-var VueScrollTo = require('vue-scrollto');
+import * as VueScrollTo from 'vue-scrollto';
+import Toast from "vue-toastification";
 import App from './App.vue'
 
 import './assets/styles/index.css';
+import "vue-toastification/dist/index.css";
 
 const Vue = createApp(App);
 
@@ -19,6 +21,9 @@ Vue.use(VueScrollTo, {
     x: false,
     y: true
 });
+
+Vue.use(Toast);
+
 
 Vue.mount('#app')
 
