@@ -1,13 +1,8 @@
 <template>
   <div class="relative bg-blue-500 overflow-hidden" id="contact">
     <div class="lg:w-1/2 max-w-screen-xl">
-      <div class="relative bg-blue-500 lg:w-full hidden lg:block ">
+      <div class="relative bg-blue-500 lg:w-full hidden lg:block">
         <img class="w-full object-cover lg:w-full" src="@/assets/images/banner.jpg" alt="">
-        <!--        <svg class="hidden z-20 lg:block absolute right-0 inset-y-0 h-full w-64 text-blue-500 transform angle-split"-->
-        <!--             fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">-->
-        <!--          <polygon points="50,0 100,0 50,100 0,100"/>-->
-        <!--          &lt;!&ndash;          <polygon points="100,0 100,0 100,100 0,100"/>&ndash;&gt;-->
-        <!--        </svg>-->
       </div>
       <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <div class="flex flex-col h-full w-full items-center justify-center py-6 px-6 bg-blue-500">

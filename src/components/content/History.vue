@@ -17,6 +17,7 @@
           :index="i">
       </card-row>
       <section-break
+          class="mt-10 lt:mb-0"
           gradient-from="from-purple-200"
           gradient-via="via-pink-200"
           gradient-to="to-blue-500"
