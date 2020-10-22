@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-blue-500 overflow-hidden" id="contact">
+  <div class="relative bg-blue-500 overflow-hidden pt-5 pb-10 md:p-0" id="contact">
     <div class="lg:w-1/2 max-w-screen-xl">
       <div class="relative bg-blue-500 lg:w-full hidden lg:block">
         <img class="w-full object-cover lg:w-full" src="@/assets/images/banner.jpg" alt="">

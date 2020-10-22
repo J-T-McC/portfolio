@@ -6,7 +6,7 @@
         gradient-to="to-blue-500"
         animation="animate-gradient-xy">
     </section-break>
-    <div class="bg-gradient-to-r from-white via-white to-gray-200 pt-6 lg:pt-0">
+    <div class="lg:bg-gradient-to-r from-white via-white to-gray-200 pt-6 lg:pt-0">
       <card-row
           v-for="(card, i) in cards"
           v-bind:key="card"
@@ -17,7 +17,6 @@
           :index="i">
       </card-row>
       <section-break
-          class="mt-10 lt:mb-0"
           gradient-from="from-purple-200"
           gradient-via="via-pink-200"
           gradient-to="to-blue-500"
