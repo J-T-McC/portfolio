@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.Vue-Toastification__toast--success.custom-toast-class {
+    @apply bg-green-500;
+}
+
+.Vue-Toastification__toast--error.custom-toast-class {
+    @apply bg-red-600;
+}

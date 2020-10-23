@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center pb-10">
-    <h2 class="text-4xl tracking-tight leading-10 font-thi sm:text-3xl sm:leading-none md:text-3xl">
+    <h2 class="tracking-tight leading-10 font-thin text-3xl sm:leading-none lg:text-4xl">
       <span class="text-white">
         <slot></slot>
       </span>

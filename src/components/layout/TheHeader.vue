@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import SvgMenu from "@/components/vector/SvgMenu";
-import SvgLogo from "@/components/vector/SvgLogo";
+import SvgMenu from "@/components/icons/SvgMenu";
+import SvgLogo from "@/components/icons/SvgLogo";
 export default {
   name: "Header",
   components: {SvgLogo, SvgMenu},

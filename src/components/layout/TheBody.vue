@@ -17,7 +17,7 @@ export default {
     Me,
     History,
     Contact
-  }
+  },
 }
 </script>
 

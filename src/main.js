@@ -22,8 +22,9 @@ Vue.use(VueScrollTo, {
     y: true
 });
 
-Vue.use(Toast);
-
+Vue.use(Toast, {
+    maxToasts: 1
+});
 
 Vue.mount('#app')
 
