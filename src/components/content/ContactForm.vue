@@ -111,18 +111,18 @@ export default {
       return formData;
     },
     handleSubmit() {
-      axios.post(
-          "/",
-          new URLSearchParams(this.createFormDataObj(this.form)).toString(),
-          {
-            header: {"Content-Type": "application/x-www-form-urlencoded"}
-          }
-      ).then((response) => {
+      axios.post("/", new URLSearchParams(
+          this.createFormDataObj(this.form)
+      ).toString(), {
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
+      }).then(response => {
         if (response.status === 200) {
           this.resetForm();
           this.toastMessage('success', 'E-mail Sent!');
         } else {
-          this.toastMessage('error', 'Failed to sent E-mail');
+          throw new Error(response.statusText)
         }
       }).catch(() => this.toastMessage('error', 'Failed to sent E-mail'));
     },

@@ -17,7 +17,7 @@
             <img alt="TailwindCSS" class="w-4 inline" src="@/assets/images/tailwindcss-logo.svg"> TailwindCSS.
           </a>
         </span>
-        <a href="https://github.com/J-T-McC">View on GitHub</a>
+        <a href="https://github.com/J-T-McC/portfolio">View on GitHub</a>
       </div>
     </div>
   </footer>

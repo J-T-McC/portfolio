@@ -9,7 +9,7 @@
         <main class="mx-auto max-w-screen-xl xl:py-30 lg:py-20 py-5 px-10 h-screen flex items-center justify-center">
           <div class="sm:text-center lg:text-left z-20 text-white">
             <h2 class="text-4xl tracking-tight leading-10 font-extrabold sm:text-5xl sm:leading-none md:text-5xl">
-              Full Stack Developer
+              Full Stack Web Developer
             </h2>
             <p class="mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
               Add a brief description of what it is you do. Make sure its long enough to wrap on a few lines so the
@@ -18,13 +18,59 @@
             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div class="rounded-md shadow" v-scroll-to="'#about'">
                 <a href="#"
-                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-400 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                   class="
+                      flex
+                      justify-center
+                      px-8
+                      py-3
+                      leading-6
+                      border
+                      border-transparent
+                      rounded-md
+                      font-medium
+                      text-base
+                      text-white
+                      bg-blue-600
+                      ease-in-out
+                      transition
+                      duration-100
+                      hover:bg-blue-400
+                      focus:outline-none
+                      focus:border-indigo-700
+                      focus:shadow-outline-indigo
+                      md:py-4
+                      md:text-lg
+                      md:px-10
+                   ">
                   About
                 </a>
               </div>
               <div class="mt-3 sm:mt-0 sm:ml-3" v-scroll-to="'#contact'">
                 <a href="#"
-                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-blue-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                   class="
+                      flex
+                      justify-center
+                      px-8
+                      py-3
+                      leading-6
+                      border
+                      border-transparent
+                      rounded-md
+                      font-medium
+                      text-base
+                      text-blue-700
+                      bg-indigo-100
+                      ease-in-out
+                      transition
+                      duration-150
+                      hover:text-indigo-600
+                      focus:outline-none
+                      focus:shadow-outline-indigo
+                      focus:border-indigo-300
+                      md:py-4
+                      md:text-lg
+                      md:px-10
+                  ">
                   Contact Me
                 </a>
               </div>
@@ -34,10 +80,9 @@
       </div>
     </div>
     <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-      <img
-          class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full banner-img"
-          src="@/assets/images/banner.jpg"
-          alt="">
+      <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full banner-img"
+           src="@/assets/images/banner.jpg"
+           alt="">
     </div>
   </div>
 </template>
