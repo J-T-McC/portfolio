@@ -18,10 +18,6 @@
 <script>
 export default {
   name: "Card",
-  props: ['reverse', 'header', 'date', 'body'],
+  props: ['header', 'date', 'body'],
 }
 </script>
-
-<style scoped>
-
-</style>

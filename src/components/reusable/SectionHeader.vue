@@ -13,7 +13,3 @@ export default {
   name: "SectionHeader",
 }
 </script>
-
-<style scoped>
-
-</style>

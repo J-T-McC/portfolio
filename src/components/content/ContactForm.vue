@@ -47,8 +47,7 @@
                px-4
                focus:outline-none
                focus:bg-white
-               focus:border-gray-500
-            "
+               focus:border-gray-500"
             placeholder="Message..."
             id="message"
             required>
@@ -70,8 +69,7 @@
                ease-in-out
                py-2
                px-4
-               mt-3
-            "
+               mt-3"
             type="submit">Send
         </button>
       </div>

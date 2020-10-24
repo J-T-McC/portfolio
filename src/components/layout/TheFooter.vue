@@ -11,10 +11,10 @@
         <span>
           Made with
           <a href="https://vuejs.org/">
-            <img alt="VueJS" class="w-4 inline" src="@/assets/images/vuejs-logo.svg"> VueJS
-          </a> and
+            <img alt="VueJS" class="w-4 inline" src="@/assets/images/vuejs-logo.svg">
+          </a>
           <a href="https://tailwindcss.com/">
-            <img alt="TailwindCSS" class="w-4 inline" src="@/assets/images/tailwindcss-logo.svg"> TailwindCSS.
+            <img alt="TailwindCSS" class="w-4 inline" src="@/assets/images/tailwindcss-logo.svg">
           </a>
         </span>
         <a href="https://github.com/J-T-McC/portfolio">View on GitHub</a>
@@ -22,7 +22,6 @@
     </div>
   </footer>
 </template>
-
 <script>
 
 import SectionBreak from "@/components/reusable/SectionBreak";
@@ -34,7 +33,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

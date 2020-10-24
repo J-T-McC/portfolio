@@ -40,8 +40,7 @@
                       focus:shadow-outline-indigo
                       md:py-4
                       md:text-lg
-                      md:px-10
-                   ">
+                      md:px-10">
                   About
                 </a>
               </div>
@@ -69,8 +68,7 @@
                       focus:border-indigo-300
                       md:py-4
                       md:text-lg
-                      md:px-10
-                  ">
+                      md:px-10">
                   Contact Me
                 </a>
               </div>

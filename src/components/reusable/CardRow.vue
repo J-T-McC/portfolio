@@ -5,13 +5,12 @@
     <div
         class="w-full lg:w-1/2 flex justify-center card-container relative lg:py-12"
         :class="{'lg:justify-end': reverse, 'lg:justify-start': !reverse}">
-      <card :reverse="reverse" :header="header" :body="body" :date="date"></card>
+      <card :header="header" :body="body" :date="date"></card>
     </div>
   </div>
 </template>
 
 <script>
-
 import Card from "@/components/reusable/Card";
 import AnimatedBorder from "@/components/reusable/AnimatedBorder";
 
@@ -23,9 +22,4 @@ export default {
     AnimatedBorder
   }
 }
-
 </script>
-
-<style scoped>
-
-</style>
