@@ -12,7 +12,7 @@
               Full Stack Web Developer
             </h2>
             <p class="mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              Add a brief description of what it is you do. Make sure its long enough to wrap on a few lines so the
+              (currently under construction) - Add a brief description of what it is you do. Make sure its long enough to wrap on a few lines so the
               content is balanced.
             </p>
             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
