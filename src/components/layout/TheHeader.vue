@@ -23,16 +23,16 @@
       <div class="block lg:hidden">
         <button @click="toggle"
                 class="
-                flex
-                items-center
-                px-3
-                py-2
-                border
-                rounded
-                text-blue-500
-                border-blue-500
-                hover:text-blue-300
-                hover:border-blue-300">
+                  flex
+                  items-center
+                  px-3
+                  py-2
+                  border
+                  rounded
+                  text-blue-500
+                  border-blue-500
+                  hover:text-blue-300
+                  hover:border-blue-300">
           <svg-menu></svg-menu>
         </button>
       </div>

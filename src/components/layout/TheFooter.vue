@@ -10,14 +10,14 @@
       <div class="text-xs flex justify-between w-full">
         <span>
           Made with
-          <a href="https://vuejs.org/">
+          <a target="_blank" href="https://vuejs.org/">
             <img alt="VueJS" class="w-4 inline" src="@/assets/images/vuejs-logo.svg">
           </a>
-          <a href="https://tailwindcss.com/">
+          <a target="_blank" href="https://tailwindcss.com/">
             <img alt="TailwindCSS" class="w-4 inline" src="@/assets/images/tailwindcss-logo.svg">
           </a>
         </span>
-        <a href="https://github.com/J-T-McC/portfolio">View on GitHub</a>
+        <a target="_blank" href="https://github.com/J-T-McC/portfolio">View on GitHub</a>
       </div>
     </div>
   </footer>
