@@ -79,7 +79,7 @@
     </div>
     <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
       <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full banner-img"
-           src="@/assets/images/banner.jpg"
+           src="@/assets/images/banner-hq.jpg"
            alt="">
     </div>
   </div>
@@ -102,9 +102,8 @@ export default {
 }
 
 .banner-img {
-  object-position: -1rem 4rem;
-  -webkit-filter: grayscale(50%);
-  filter: grayscale(50%);
+  object-position: -19rem 0rem;
+  /*-webkit-filter: grayscale(50%);*/
 }
 
 </style>
