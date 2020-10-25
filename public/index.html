@@ -6,20 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="My personal developer profile website" />
-    <meta property="og:url" content="https://tysonmccarney.com" />
-    <meta property="og:image" content="https://tysonmccarney.com/img/me.png" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8RDFE9X66"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-M8RDFE9X66');
-    </script>
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="My personal developer profile website"/>
+    <meta property="og:url" content="https://tysonmccarney.com"/>
+    <meta property="og:image" content="https://tysonmccarney.com/img/me.png"/>
 </head>
 <body>
 <noscript>
@@ -33,6 +24,16 @@
     <input type="text" name="email"/>
     <textarea name="message"></textarea>
 </form>
-<!-- built files will be auto injected -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M8RDFE9X66"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-M8RDFE9X66');
+</script>
 </body>
 </html>
