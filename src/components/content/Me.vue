@@ -12,8 +12,8 @@
               Full Stack Web Developer
             </h2>
             <p class="mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              (currently under construction) - Add a brief description of what it is you do. Make sure its long enough to wrap on a few lines so the
-              content is balanced.
+              Welcome to my personal developer profile. Below you will find a brief summary of my most recent professional
+              history and links to my GitHub and LinkedIn accounts. Please reach out if you have any questions or comments.
             </p>
             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div class="rounded-md shadow" v-scroll-to="'#about'">
@@ -21,8 +21,8 @@
                    class="
                       flex
                       justify-center
-                      px-8
                       py-3
+                      px-8
                       leading-6
                       border
                       border-transparent

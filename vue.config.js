@@ -4,7 +4,7 @@ module.exports = {
             entry: 'src/main.js',
             template: 'public/index.html',
             filename: 'index.html',
-            title: 'Portfolio: Tyson McCarney',
+            title: 'Tyson McCarney - Developer Profile',
         },
     },
 }
