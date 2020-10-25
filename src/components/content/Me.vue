@@ -81,7 +81,7 @@
     </div>
     <div class="block absolute inset-y-0 right-0 w-full lg:w-1/2">
       <img class="w-full object-cover w-full h-full opacity-25 lg:opacity-100 xl:banner-img-offset"
-           src="https://res.cloudinary.com/ddaji66m6/image/upload/f_auto,c_scale,w_auto:1500/portfolio/banner_dzxfbj.jpg"
+           :src="`https://res.cloudinary.com/ddaji66m6/image/upload/f_auto,c_scale,${bannerWidth}/portfolio/banner_dzxfbj.jpg`"
            alt="">
     </div>
   </div>
@@ -104,10 +104,10 @@ export default {
       }
 
       if(isMobile || isTablet) {
-        return 'w_1200';
+        return 'w_1500';
       }
 
-      return '';
+      return 'w_auto';
     }
   }
 
