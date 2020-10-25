@@ -77,8 +77,8 @@
         </main>
       </div>
     </div>
-    <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-      <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full banner-img"
+    <div class="block absolute inset-y-0 right-0 w-full lg:w-1/2">
+      <img class="w-full object-cover w-full h-full opacity-25 lg:opacity-100 xl:banner-img-offset"
            src="https://res.cloudinary.com/ddaji66m6/image/upload/f_auto/portfolio/banner_dzxfbj.jpg"
            alt="">
     </div>
@@ -101,9 +101,11 @@ export default {
   --transform-translate-x: 44%;
 }
 
-.banner-img {
-  object-position: -19rem 0rem;
-  /*-webkit-filter: grayscale(50%);*/
+@responsive {
+  .banner-img-offset {
+    object-position: -19rem 0rem;
+  }
 }
+
 
 </style>

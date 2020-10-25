@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "mobile-device-detect": "^0.4.3",
     "tailwindcss": "^1.9.4",
     "vue": "^3.0.0",
     "vue-scrollto": "^2.19.1",
