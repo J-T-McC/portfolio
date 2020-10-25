@@ -132,21 +132,12 @@ export default {
       };
     },
     toastMessage(type, text) {
-
-      const toastTimeout = 2000;
-
-      let toastID = this.toast[type](text, {
-        timeout: toastTimeout,
+      this.toast[type](text, {
+        timeout: 2000,
         position: POSITION.BOTTOM_RIGHT,
         toastClassName: "custom-toast-class",
         pauseOnFocusLoss: false
       });
-
-      // required for dismiss - toast library timeout dismiss currently broken
-      // see: https://github.com/Maronato/vue-toastification/issues/137
-      setTimeout(() => {
-        this.toast.dismiss(toastID);
-      }, toastTimeout);
     }
   }
 }
