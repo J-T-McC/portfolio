@@ -12,8 +12,10 @@
               Full Stack Web Developer
             </h2>
             <p class="mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              Welcome to my personal developer profile. Below you will find a brief summary of my most recent professional
-              history and links to my GitHub and LinkedIn accounts. Please reach out if you have any questions or comments.
+              Welcome to my personal developer profile. Below you will find a brief summary of my most recent
+              professional
+              history and links to my GitHub and LinkedIn accounts. Please reach out if you have any questions or
+              comments.
             </p>
             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div class="rounded-md shadow" v-scroll-to="'#about'">
@@ -79,17 +81,34 @@
     </div>
     <div class="block absolute inset-y-0 right-0 w-full lg:w-1/2">
       <img class="w-full object-cover w-full h-full opacity-25 lg:opacity-100 xl:banner-img-offset"
-           src="https://res.cloudinary.com/ddaji66m6/image/upload/f_auto,w_auto,c_scale/portfolio/banner_dzxfbj.jpg"
+           src="https://res.cloudinary.com/ddaji66m6/image/upload/f_auto,c_scale,w_auto:1500/portfolio/banner_dzxfbj.jpg"
            alt="">
     </div>
   </div>
 </template>
 
 <script>
+
+import {isMobileOnly, isMobile, isTablet} from 'mobile-device-detect';
+
 export default {
   name: "Me",
   data() {
     return {}
+  },
+  computed: {
+    bannerWidth() {
+
+      if(isMobileOnly) {
+        return 'w_800';
+      }
+
+      if(isMobile || isTablet) {
+        return 'w_1200';
+      }
+
+      return '';
+    }
   }
 
 }
