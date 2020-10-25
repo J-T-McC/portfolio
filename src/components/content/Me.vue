@@ -79,7 +79,7 @@
     </div>
     <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
       <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full banner-img"
-           src="https://res.cloudinary.com/ddaji66m6/image/upload/v1603599254/portfolio/banner_dzxfbj.jpg"
+           src="https://res.cloudinary.com/ddaji66m6/image/upload/f_auto/portfolio/banner_dzxfbj.jpg"
            alt="">
     </div>
   </div>
