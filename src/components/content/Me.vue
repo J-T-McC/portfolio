@@ -8,9 +8,9 @@
         </svg>
         <main class="mx-auto max-w-screen-xl xl:py-30 lg:py-20 py-5 px-10 h-screen flex items-center justify-center">
           <div class="sm:text-center lg:text-left z-20 text-white">
-            <h2 class="text-4xl tracking-tight leading-10 font-extrabold sm:text-5xl sm:leading-none md:text-5xl">
+            <h1 class="text-4xl tracking-tight leading-10 font-extrabold sm:text-5xl sm:leading-none md:text-5xl">
               Full Stack Web Developer
-            </h2>
+            </h1>
             <p class="mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
               Welcome to my personal developer profile. Below you will find a brief summary of my most recent
               professional
