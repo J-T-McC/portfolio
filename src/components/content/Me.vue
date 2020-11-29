@@ -13,9 +13,7 @@
             </h1>
             <p class="mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
               Welcome to my personal developer profile. Below you will find a brief summary of my most recent
-              professional
-              history and links to my GitHub and LinkedIn accounts. Please reach out if you have any questions or
-              comments.
+              professional. Please reach out if you have any questions or comments.
             </p>
             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div class="rounded-md shadow" v-scroll-to="'#about'">

@@ -44,7 +44,7 @@ export default {
           header: 'Sentis - Head of Systems & Solutions',
           date: 'April 2018-current',
           body: `Promoted to Head of Systems & Solutions and charged with overseeing the Development team and IT footprint.
-          Completion of migration to AWS and company to Azure/O365. Company now has full remote work capabilities.
+          Completion of migration to AWS and company to AzureAD & O365.
           Improving upon & implementation of policies and procedures, automating repetitive company process and reduction
           of technical debt. Laravel and VueJS focused.`
         },
