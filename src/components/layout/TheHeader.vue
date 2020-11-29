@@ -63,7 +63,7 @@
           </a>
         </div>
 
-        <div class="flex flex-row sm:mt-4 lg:mt-0">
+        <div class="flex flex-row mt-4 lg:mt-0">
           <a href="https://www.linkedin.com/in/tyson-mccarney-7582ba71/" class="mr-3" target="_blank">
             <img alt="LinkedIn" class="w-5 inline" src="@/assets/images/linkedin-logo.svg">
           </a>
