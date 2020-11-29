@@ -71,18 +71,20 @@
 import SvgMenu from "@/components/icons/SvgMenu";
 import SvgLogo from "@/components/icons/SvgLogo";
 
+import {ref} from 'vue'
+
 export default {
   name: "Header",
   components: {SvgLogo, SvgMenu},
-  data() {
+  setup() {
+    const open = ref(false)
+    const toggle = () => {
+      open.value = !open.value
+    }
     return {
-      open: false
+      open,
+      toggle
     };
   },
-  methods: {
-    toggle() {
-      this.open = !this.open
-    }
-  }
 }
 </script>

@@ -37,7 +37,7 @@ export default {
     CardRow,
     SectionBreak
   },
-  data() {
+  setup() {
     return {
       cards: [
         {

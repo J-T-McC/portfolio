@@ -11,11 +11,17 @@
 </template>
 
 <script>
+import {ref, onMounted } from 'vue'
+
 export default {
   name: "AnimatedBorder",
-  data() {
+  setup(props) {
+    const animate = ref(false);
+    onMounted(() => {
+      setTimeout(() => animate.value = true, props.delay * 1000);
+    })
     return {
-      animate: false
+      animate
     };
   },
   props: {
@@ -24,9 +30,6 @@ export default {
       default: 0
     }
   },
-  mounted() {
-    setTimeout(() => this.animate = true, this.delay * 1000);
-  }
 }
 </script>
 

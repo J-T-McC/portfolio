@@ -22,7 +22,7 @@ import { isMobileOnly } from 'mobile-device-detect';
 
 export default {
   name: "Contact",
-  data() {
+  setup() {
     return {
       isMobileOnly
     };

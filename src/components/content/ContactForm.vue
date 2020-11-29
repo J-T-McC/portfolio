@@ -83,21 +83,37 @@
 
 import axios from "axios";
 import {useToast, POSITION} from "vue-toastification";
+import {ref} from 'vue'
 
 export default {
   name: "ContactForm",
-  data() {
-    return {
-      form: {
-        email: null,
-        message: null,
-        "form-name": "contact",
-      },
-    }
-  },
   setup() {
+
+    const toast = useToast()
+    const toastMessage = (type, text) => {
+      toast[type](text, {
+        timeout: 2000,
+        position: POSITION.BOTTOM_RIGHT,
+        toastClassName: "custom-toast-class",
+        pauseOnFocusLoss: false
+      });
+    }
+
+    const defaultForm = {
+      email: null,
+      message: null,
+      "form-name": "contact",
+    }
+    const form = ref({ ...defaultForm })
+    const resetForm = () => {
+      form.value = { ...defaultForm }
+    }
+
     return {
-      toast: useToast()
+      toast,
+      toastMessage,
+      form,
+      resetForm
     }
   },
   methods: {
@@ -122,22 +138,7 @@ export default {
         } else {
           throw new Error(response.statusText)
         }
-      }).catch(() => this.toastMessage('error', 'Failed to sent E-mail'));
-    },
-    resetForm() {
-      this.form = {
-        email: null,
-        message: null,
-        "form-name": "contact",
-      };
-    },
-    toastMessage(type, text) {
-      this.toast[type](text, {
-        timeout: 2000,
-        position: POSITION.BOTTOM_RIGHT,
-        toastClassName: "custom-toast-class",
-        pauseOnFocusLoss: false
-      });
+      }).catch(() =>   this.toastMessage('error', 'Failed to sent E-mail'));
     }
   }
 }
@@ -145,6 +146,5 @@ export default {
 </script>
 
 <style>
-
 
 </style>
