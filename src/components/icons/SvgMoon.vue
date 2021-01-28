@@ -1,7 +1,6 @@
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-       preserveAspectRatio="xMidYMid meet"
-       viewBox="193.73118279569962 102.87096774193549 143.78494623655928 145.93548387096774" class="pulse">
+       viewBox="193.73118279569962 102.87096774193549 143.78494623655928 145.93548387096774">
     <defs>
       <path
           class="ping"
