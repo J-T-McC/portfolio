@@ -1,5 +1,5 @@
 <template>
-  <div class="hidden lg:block flex items-center relative h-auto w-px bg-blue-400 dark:bg-purple-400 z-20"
+  <div class="hidden lg:block flex items-center relative h-auto w-px bg-blue-400 dark:bg-purple-400 z-11"
        :class="{'animate-pulse-slow': animate}">
       <span class="flex absolute h-4 w-4 pulse-circle">
         <span class="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"
@@ -37,5 +37,9 @@ export default {
 .pulse-circle {
   left: -.5rem;
   top: calc(50% - .5rem);
+}
+
+.z-11 {
+  z-index: 11;
 }
 </style>

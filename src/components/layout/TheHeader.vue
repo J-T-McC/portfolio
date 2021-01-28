@@ -12,7 +12,7 @@
            z-50">
       <div class="flex items-center flex-shrink-0 mr-6">
         <svg-logo></svg-logo>
-        <span class="font-semibold text-xl tracking-tight cursor-pointer" v-scroll-to="'#me'">Tyson McCarney</span>
+        <span @click="close" class="font-semibold text-xl tracking-tight cursor-pointer" v-scroll-to="'#me'">Tyson McCarney</span>
       </div>
 
       <div class="block lg:hidden">
