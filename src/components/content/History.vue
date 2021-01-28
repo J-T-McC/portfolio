@@ -8,8 +8,10 @@
   <div id="about" class="relative" ref="container">
     <div v-if="mode.isDarkMode.value" class="stars z-0 hidden lg:block absolute top-0 left-0 w-full h-full"></div>
     <div v-if="mode.isDarkMode.value" class="twinkling z-0 hidden lg:block absolute top-0 left-0 w-full h-full"></div>
-    <SvgUFO @mouseenter="randomizePosition()" v-if="mode.isDarkMode.value" class="z-10 opacity-25 absolute hidden lg:block h-10 w-10 transition-all animate-pulse" :style="pos"/>
-    <div class="lg:bg-gradient-to-r light:from-white light:via-white light:to-gray-200 pt-6 lg:pt-0 dark:bg-gray-900 z-50 pb-10 lg:pb-0">
+    <SvgUFO @mouseenter="randomizePosition()" v-if="mode.isDarkMode.value"
+            class="z-10 opacity-25 absolute hidden lg:block h-10 w-10 transition-all animate-pulse" :style="pos"/>
+    <div
+        class="lg:bg-gradient-to-r light:from-white light:via-white light:to-gray-200 pt-6 lg:pt-0 dark:bg-gray-900 z-50 pb-10 lg:pb-0">
       <card-row
           v-for="(card, i) in cards"
           v-bind:key="card"
@@ -29,31 +31,31 @@
 
 <script>
 
-import CardRow from "@/components/reusable/CardRow";
-import SectionBreak from "@/components/reusable/SectionBreak";
+import CardRow from '@/components/reusable/CardRow'
+import SectionBreak from '@/components/reusable/SectionBreak'
 import useDarkMode from '@/hooks/useDarkMode'
 import SvgUFO from '@/components/icons/SvgUFO'
-import {ref} from 'vue'
-import { isMobileOnly } from 'mobile-device-detect';
+import { ref } from 'vue'
+import { isMobileOnly } from 'mobile-device-detect'
 
 export default {
-  name: "History",
+  name: 'History',
   components: {
     SvgUFO,
     CardRow,
     SectionBreak
   },
-  setup() {
-    const mode = useDarkMode();
-    const container = ref(null);
+  setup () {
+    const mode = useDarkMode()
+    const container = ref(null)
 
     const pos = ref({
       top: -1000,
     })
 
     const randomizePosition = () => {
-      const duration = Math.ceil(Math.random() * 5) + 's';
-      const offset = Math.random() < 0.5 ? -100 : 100;
+      const duration = Math.ceil(Math.random() * 5) + 's'
+      const offset = Math.random() < 0.5 ? -100 : 100
       pos.value = {
         top: Math.random() * container.value?.offsetHeight + offset ?? -1000,
         left: Math.random() * container.value?.offsetWidth + offset ?? -1000,
@@ -63,17 +65,15 @@ export default {
     }
 
     const setAnimationTimeout = () => {
-      if(!isMobileOnly) {
+      if (!isMobileOnly) {
         setTimeout(() => {
-          if(mode.isDarkMode.value) {
-            randomizePosition()
-            setAnimationTimeout()
-          }
+          randomizePosition()
+          setAnimationTimeout()
         }, Math.ceil(Math.random() * 10000))
       }
     }
 
-    setAnimationTimeout();
+    setAnimationTimeout()
 
     return {
       randomizePosition,
@@ -129,53 +129,91 @@ export default {
 
 <style scoped>
 @keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
+
 @-webkit-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
+
 @-moz-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
+
 @-ms-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
 
 @keyframes move-clouds-back {
-  from {background-position:0 0;}
-  to {background-position:10000px 0;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
 }
+
 @-webkit-keyframes move-clouds-back {
-  from {background-position:0 0;}
-  to {background-position:10000px 0;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
 }
+
 @-moz-keyframes move-clouds-back {
-  from {background-position:0 0;}
-  to {background-position:10000px 0;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
 }
+
 @-ms-keyframes move-clouds-back {
-  from {background-position: 0;}
-  to {background-position:10000px 0;}
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
 }
 
 .stars {
   background: black url(https://res.cloudinary.com/ddaji66m6/image/upload/v1611800904/portfolio/stars_vcimcd.png) repeat top center;
-  z-index:0;
+  z-index: 0;
 }
 
-.twinkling{
-  background:transparent url(https://res.cloudinary.com/ddaji66m6/image/upload/v1611800910/portfolio/twinkling_qmxcrl.png) repeat top center;
+.twinkling {
+  background: transparent url(https://res.cloudinary.com/ddaji66m6/image/upload/v1611800910/portfolio/twinkling_qmxcrl.png) repeat top center;
   opacity: 0.6;
-  z-index:1;
+  z-index: 1;
 
-  -moz-animation:move-twink-back 300s linear infinite;
-  -ms-animation:move-twink-back 300s linear infinite;
-  -o-animation:move-twink-back 300s linear infinite;
-  -webkit-animation:move-twink-back 300s linear infinite;
-  animation:move-twink-back 300s linear infinite;
+  -moz-animation: move-twink-back 300s linear infinite;
+  -ms-animation: move-twink-back 300s linear infinite;
+  -o-animation: move-twink-back 300s linear infinite;
+  -webkit-animation: move-twink-back 300s linear infinite;
+  animation: move-twink-back 300s linear infinite;
 }
 </style>
