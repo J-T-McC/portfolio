@@ -11,9 +11,10 @@
                 appearance-none
                 block
                 w-full
-                text-gray-700
+                text-gray-700 dark:text-gray-300
+                dark:bg-gray-900
                 border
-                border-gray-200
+                border-gray-200 dark:border-black
                 rounded
                 py-3
                 px-4
@@ -39,10 +40,11 @@
                w-full
                h-24
                xl:h-48
-               text-gray-700
+               text-gray-700 dark:text-gray-300
+               dark:bg-gray-900
                border
                rounded
-               border-gray-200
+               border-gray-200 dark:border-black
                py-3
                px-4
                focus:outline-none
@@ -60,8 +62,8 @@
             class="
                font-medium
                rounded-md
-               text-blue-700
-               bg-indigo-100
+               text-blue-700 dark:text-gray-200
+               bg-indigo-100 dark:bg-blue-700
                hover:text-indigo-600
                hover:bg-indigo-200
                focus:outline-none

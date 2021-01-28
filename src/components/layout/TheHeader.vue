@@ -1,18 +1,14 @@
 <template>
   <header>
     <nav class="
-           flex
-           items-center
-           border-opacity-25
-           justify-between
-           flex-wrap bg-white
-           p-6
-           fixed
-           top-0
+           flex flex-wrap
+           fixed top-0
            w-screen
-           border-b
-           border-blue-500
-           border-solid
+           items-center justify-between
+           border-b border-blue-500 dark:border-purple-800 border-solid border-opacity-75
+           bg-white dark:bg-gray-800
+           dark:text-gray-300
+           p-6
            z-50">
       <div class="flex items-center flex-shrink-0 mr-6">
         <svg-logo></svg-logo>
@@ -38,9 +34,6 @@
 
       <div
           class="
-            transition-all
-            duration-500
-            ease-in-out
             w-full
             justify-between
             flex-grow
@@ -50,13 +43,15 @@
             lg:w-auto"
           :class="{'hidden': !open, 'block': open }">
 
-        <div class="text-gray-700 text-md font-light tlg:flex-grow">
+        <div class="text-gray-700 dark:text-gray-300 text-md font-light tlg:flex-grow">
           <a v-scroll-to="'#about'"
+             @click="close"
              href="#about"
              class="block mt-4 lg:inline-block lg:mt-0 hover:text-blue-400 mr-4">
             About
           </a>
           <a v-scroll-to="'#contact'"
+             @click="close"
              href="#contact"
              class="block mt-4 lg:inline-block lg:mt-0 hover:text-blue-400 mr-4">
             Contact
@@ -64,12 +59,15 @@
         </div>
 
         <div class="flex flex-row mt-4 lg:mt-0">
-          <a href="https://www.linkedin.com/in/tyson-mccarney-7582ba71/" class="mr-3" target="_blank">
-            <img alt="LinkedIn" class="w-5 inline" src="@/assets/images/linkedin-logo.svg">
+          <a href="https://www.linkedin.com/in/tyson-mccarney-7582ba71/" rel="noopener" class="mr-3" target="_blank">
+            <SvgLinkedIn class="w-5 inline"/>
           </a>
-          <a href="https://github.com/J-T-McC" target="_blank">
-            <img alt="GitHub" class="w-5 inline" src="@/assets/images/github-logo.svg">
+          <a href="https://github.com/J-T-McC" rel="noopener" target="_blank">
+            <SvgGithub class="w-5 inline"/>
           </a>
+
+          <SvgMoon @click="darkMode.toggle()" v-if="darkMode.mode.value === 'dark'" class="ml-3 w-7 inline cursor-pointer"/>
+          <SvgSun @click="darkMode.toggle()" v-if="darkMode.mode.value === 'light'" class="ml-3 w-7 inline cursor-pointer"/>
         </div>
       </div>
 
@@ -78,23 +76,33 @@
 </template>
 
 <script>
-import SvgMenu from "@/components/icons/SvgMenu";
-import SvgLogo from "@/components/icons/SvgLogo";
-
-import {ref} from 'vue'
+import SvgMenu from '@/components/icons/SvgMenu'
+import SvgLogo from '@/components/icons/SvgLogo'
+import { ref } from 'vue'
+import SvgGithub from '@/components/icons/SvgGithub'
+import SvgLinkedIn from '@/components/icons/SvgLinkedIn'
+import SvgSun from '@/components/icons/SvgSun'
+import SvgMoon from '@/components/icons/SvgMoon'
+import useDarkMode from '@/hooks/useDarkMode'
 
 export default {
-  name: "Header",
-  components: {SvgLogo, SvgMenu},
-  setup() {
+  name: 'Header',
+  components: { SvgMoon, SvgSun, SvgLinkedIn, SvgGithub, SvgLogo, SvgMenu },
+  setup () {
     const open = ref(false)
     const toggle = () => {
       open.value = !open.value
     }
+    const close = () => {
+      open.value = false
+    }
+    const darkMode = useDarkMode();
     return {
       open,
-      toggle
-    };
+      toggle,
+      close,
+      darkMode
+    }
   },
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <hr class="w-screen bg-blue-400 h-px bg-gradient-to-r"
+  <hr class="w-screen bg-blue-400 h-px bg-gradient-to-r border-none"
       :class="[gradientFrom, gradientVia, gradientTo, animation]">
 </template>
 

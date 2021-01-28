@@ -9,3 +9,20 @@
 .Vue-Toastification__toast--error.custom-toast-class {
     @apply bg-red-600;
 }
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-500;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}

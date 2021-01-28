@@ -1,8 +1,8 @@
 <template>
-  <div class="relative bg-blue-500 overflow-hidden -mb-px" id="me">
+  <div class="relative overflow-hidden bg-blue-500 dark:bg-blue-900" id="me">
     <div class="lg:w-1/2 max-w-screen-xl h-screen">
-      <div class="relative pb-8 bg-blue-500 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32 ">
-        <svg class="hidden z-10 lg:block absolute right-0 inset-y-0 h-full w-64 text-blue-500 transform angle-split"
+      <div class="relative pb-8 bg-blue-500 dark:bg-blue-900 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32 ">
+        <svg class="hidden z-10 lg:block absolute right-0 inset-y-0 h-full w-64 text-blue-500 dark:text-blue-900 transform angle-split"
              fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
           <polygon points="50,0 100,0 50,100 0,100"/>
         </svg>
@@ -115,7 +115,7 @@ export default {
 <style scoped>
 
 .angle-split {
-  --transform-translate-x: 44%;
+  transform: translateX(44%);
 }
 
 @responsive {
