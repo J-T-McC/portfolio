@@ -2,7 +2,10 @@ module.exports = {
     darkMode: 'class',
     purge: {
         preserveHtmlElements: false,
-        content: ['./src/**/*.vue'],
+        content: [
+            './public/*.html',
+            './src/**/*.vue',
+        ],
     },
     theme: {
         extend: {
