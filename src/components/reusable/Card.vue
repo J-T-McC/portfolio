@@ -2,7 +2,6 @@
   <div class="
       z-10
       flex
-      bg-white dark:bg-blue-900
       w-full
       my-5 lg:my-0
       shadow-sm lg:shadow-lg
