@@ -5,10 +5,18 @@
       gradient-to="to-blue-500"
       animation="animate-gradient-xy">
   </section-break>
-  <div id="about" class="relative" ref="container">
+  <div id="about" class="relative" ref="container" >
+    <div v-if="score" class="gamify absolute top-2 left-2 z-10 text-white text-xl">SCORE: {{score}}</div>
     <div v-if="mode.isDarkMode.value" class="hidden lg:block stars z-0 absolute top-0 left-0 w-full h-full"></div>
     <div v-if="mode.isDarkMode.value" class="hidden lg:block twinkling z-0 absolute top-0 left-0 w-full h-full"></div>
-    <SvgUFO class="absolute hidden lg:block h-10 w-10 wobble transition-all" :style="pos" @mouseenter="randomizePosition()" v-if="mode.isDarkMode.value" />
+    <SvgUFO
+        @click="ufoClicked"
+        @mouseenter="randomizePosition"
+        :style="pos"
+        :class="{'bg-red-600 rounded-full': hit}"
+        class="absolute hidden lg:block h-10 w-10 wobble transition-all cursor-crosshair"
+        v-if="mode.isDarkMode.value"
+    />
     <div class="lg:bg-gradient-to-r light:from-white light:via-white light:to-gray-200 pt-6 lg:pt-0 dark:bg-gray-900 z-50 pb-5 lg:pb-0">
       <card-row
           v-for="(card, i) in cards"
@@ -46,6 +54,16 @@ export default {
   setup () {
     const mode = useDarkMode()
     const container = ref(null)
+    const score = ref(0)
+    const hit = ref(false)
+
+    const ufoClicked = () => {
+      score.value++
+      hit.value = true
+      setTimeout(() => {
+        hit.value = false
+      }, 1000)
+    }
 
     const pos = ref({
       top: -1000,
@@ -91,6 +109,9 @@ export default {
 
     return {
       randomizePosition,
+      ufoClicked,
+      score,
+      hit,
       container,
       pos,
       mode,
@@ -176,11 +197,6 @@ export default {
 
 .wobble {
   animation: wobble .3s infinite!important;
-}
-
-.pulse {
-  animation-name: pulse;
-  animation-timing-function: ease-in-out;
 }
 
 .stars {

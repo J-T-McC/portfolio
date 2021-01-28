@@ -9,6 +9,9 @@ module.exports = {
     },
     theme: {
         extend: {
+            cursor: {
+                crosshair: 'crosshair',
+            },
             colors: {
                 //tailwind 1 pallet
                 transparent: 'transparent',

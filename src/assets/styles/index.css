@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gamify {
+    font-family: 'VT323', monospace;
+}
 
 .Vue-Toastification__toast--success.custom-toast-class {
     @apply bg-green-500;

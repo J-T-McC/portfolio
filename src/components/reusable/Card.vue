@@ -3,6 +3,8 @@
       z-10
       flex
       w-full
+      hover:bg-white
+      hover:bg-opacity-10
       my-5 lg:my-0
       shadow-sm lg:shadow-lg
       rounded

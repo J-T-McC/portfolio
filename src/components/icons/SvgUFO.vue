@@ -35,7 +35,7 @@
 
 <script>
 export default {
-name: "SvgUFO"
+name: "SvgUFO",
 }
 </script>
 
