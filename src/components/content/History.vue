@@ -85,7 +85,6 @@ export default {
         }, Math.ceil(Math.random() * 10000))
     }
 
-
     if(!isMobileOnly) {
       setAnimationTimeout()
     }
@@ -100,7 +99,7 @@ export default {
           header: 'Open to New Opportunities',
           date: 'Current',
           body: `Made the difficult decision to part ways with Sentis. As much as I love the team and culture,
-          I felt this was a necessary step to focus my career on development and to put away some of the IT hats I have been wearing.
+          I felt this was a necessary step to focus my career on development and to put away some of the roles I have been performing.
           Taking some time to learn and create a public github presence, hopefully contributing to the open source community in the process.`,
           callToAction: {
             label: 'View recent activity on GitHub!',
@@ -118,7 +117,7 @@ export default {
         {
           header: 'Sentis - Developer',
           date: 'April 2015-2018',
-          body: `Pivoting away from our survey platform and into custom client portals. Throughout this period I was
+          body: `Pivoting away from the survey platform and into custom client portals. Throughout this period I was
           introduced to my first frameworks & web servers. Working on a small team sometimes means wearing many hats.
           Taking on additional responsibilities to help spread the load. Introduced to Active Directory, Exchange and
           Asterisk. Personal focus remains on development.`
