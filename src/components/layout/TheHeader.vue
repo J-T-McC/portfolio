@@ -66,8 +66,8 @@
             <SvgGithub class="w-5 inline"/>
           </a>
 
-          <SvgMoon @click="darkMode.toggle()" v-if="darkMode.mode.value === 'dark'" class="ml-3 w-7 h-7 inline cursor-pointer"/>
-          <SvgSun @click="darkMode.toggle()" v-if="darkMode.mode.value === 'light'" class="ml-3 w-7 h-7 inline cursor-pointer"/>
+          <SvgMoon @click="mode.toggle()" v-if="mode.isDarkMode.value" class="ml-3 w-7 h-7 inline cursor-pointer"/>
+          <SvgSun @click="mode.toggle()" v-if="!mode.isDarkMode.value" class="ml-3 w-7 h-7 inline cursor-pointer"/>
         </div>
       </div>
 
@@ -96,12 +96,12 @@ export default {
     const close = () => {
       open.value = false
     }
-    const darkMode = useDarkMode();
+    const mode = useDarkMode();
     return {
       open,
       toggle,
       close,
-      darkMode
+      mode
     }
   },
 }

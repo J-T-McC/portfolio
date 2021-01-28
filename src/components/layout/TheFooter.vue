@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full bg-gray-200 dark:bg-gray-900 overflow-hidden">
+  <footer class="w-full bg-gray-200 dark:bg-gray-900 overflow-hidden z-20">
     <section-break
         gradient-from="from-purple-400"
         gradient-via="via-pink-400"

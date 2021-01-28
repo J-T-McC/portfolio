@@ -1,5 +1,5 @@
 <template>
-  <div class="relative overflow-hidden bg-blue-500 dark:bg-blue-900" id="me">
+  <div class="relative overflow-hidden bg-blue-500 dark:bg-blue-900 z-20" id="me">
     <div class="lg:w-1/2 max-w-screen-xl h-screen">
       <div class="relative pb-8 bg-blue-500 dark:bg-blue-900 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32 ">
         <svg class="hidden z-10 lg:block absolute right-0 inset-y-0 h-full w-64 text-blue-500 dark:text-blue-900 transform angle-split"

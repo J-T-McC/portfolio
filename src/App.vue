@@ -1,5 +1,5 @@
 <template>
-  <div :class="darkMode.mode.value">
+  <div :class="{'dark': mode.isDarkMode.value}">
     <the-header></the-header>
     <the-body></the-body>
     <the-footer></the-footer>
@@ -20,10 +20,10 @@ export default {
     TheFooter
   },
   setup() {
-    const darkMode = useDarkMode();
+    const mode = useDarkMode();
 
     return {
-      darkMode
+      mode
     }
   }
 }

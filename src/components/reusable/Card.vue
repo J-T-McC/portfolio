@@ -1,5 +1,6 @@
 <template>
   <div class="
+      z-10
       flex
       bg-white dark:bg-blue-900
       w-full

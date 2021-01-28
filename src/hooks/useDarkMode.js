@@ -1,12 +1,6 @@
-import { ref, readonly, watchEffect } from 'vue'
-import useLocalStore from '@/hooks/useLocalStore'
-const preference = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-const localStore = useLocalStore('theme');
-if(!localStore.get('mode')) {
-  localStore.set('mode', preference)
-}
-const mode = ref(localStore.get('mode'))
-const readonlyMode = readonly(mode)
+import { ref, computed } from 'vue'
+
+const mode = ref('light')
 
 export default function useDarkMode() {
 
@@ -14,12 +8,12 @@ export default function useDarkMode() {
     mode.value = mode.value === 'dark' ? 'light' : 'dark'
   }
 
-  watchEffect(() => {
-    localStore.set('mode', mode.value)
+  const isDarkMode = computed(() => {
+    return mode.value === 'dark'
   })
 
   return {
     toggle,
-    mode: readonlyMode
+    isDarkMode,
   }
 }
