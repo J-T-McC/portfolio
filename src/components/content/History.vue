@@ -17,7 +17,7 @@
         class="absolute hidden lg:block h-10 w-10 wobble transition-all cursor-crosshair"
         v-if="mode.isDarkMode.value"
     />
-    <div class="lg:bg-gradient-to-r light:from-white light:via-white light:to-gray-200 pt-6 lg:pt-0 dark:bg-gray-900 z-50 pb-5 lg:pb-0">
+    <div class="lg:bg-gradient-to-r light:from-white light:via-white light:to-gray-200 pt-6 lg:pt-0 dark:bg-gray-900 z-50 pb-5 lg:pb-0 transition-colors duration-500">
       <card-row
           v-for="(card, i) in cards"
           v-bind:key="card"
