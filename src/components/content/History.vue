@@ -6,7 +6,7 @@
       animation="animate-gradient-xy">
   </section-break>
   <div @mousemove="rotateShip" @click="moveShip" @keydown="fire" id="about" class="relative" ref="container">
-    <div class="hidden lg:block" v-if="mode.isDarkMode.value && !isMobileOnly">
+    <div class="hidden lg:block h-full w-full absolute top-0 left-0" v-if="mode.isDarkMode.value && !isMobileOnly">
       <div v-if="score" class="gamify absolute top-2 left-2 z-10 text-white text-xl">SCORE: {{ score }}</div>
       <div class="stars z-0 absolute top-0 left-0 w-full h-full"></div>
       <div class="twinkling z-0 absolute top-0 left-0 w-full h-full"></div>
@@ -105,8 +105,8 @@ export default {
       }
 
       ufoPos.value = {
-        top: Math.random() * container.value?.offsetHeight + offset ?? -1000,
-        left: Math.random() * container.value?.offsetWidth + offset ?? -1000,
+        top: (Math.random() * container.value?.offsetHeight + offset ?? -1000) + 'px',
+        left: (Math.random() * container.value?.offsetWidth + offset ?? -1000) + 'px',
         'animation-duration': duration,
         'transition-duration': duration,
         ...sizeStyles
