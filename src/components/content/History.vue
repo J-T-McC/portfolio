@@ -6,10 +6,10 @@
       animation="animate-gradient-xy">
   </section-break>
   <div @mousemove="rotateShip" @click="moveShip" @keydown="fire" id="about" class="relative" ref="container">
-    <template v-if="mode.isDarkMode.value">
+    <div class="hidden lg:block" v-if="mode.isDarkMode.value && !isMobileOnly">
       <div v-if="score" class="gamify absolute top-2 left-2 z-10 text-white text-xl">SCORE: {{ score }}</div>
-      <div class="hidden lg:block stars z-0 absolute top-0 left-0 w-full h-full"></div>
-      <div class="hidden lg:block twinkling z-0 absolute top-0 left-0 w-full h-full"></div>
+      <div class="stars z-0 absolute top-0 left-0 w-full h-full"></div>
+      <div class="twinkling z-0 absolute top-0 left-0 w-full h-full"></div>
       <img src="https://res.cloudinary.com/ddaji66m6/image/upload/v1612058700/portfolio/spaceship_tlg2od.png" alt="ship" ref="ship" :style="shipPos" class="block ship absolute w-10 h-10 z-20 bg-white select-none"/>
       <SvgWeapon v-for="(weaponHit, index) in fired" :key="index" v-bind="{...weaponHit}"/>
 
@@ -21,10 +21,9 @@
           :class="{'bg-red-600 rounded-full': hit}"
           class="absolute select-none hidden lg:block h-10 w-10 wobble transition-all cursor-crosshair"
       />
-      
-    </template>
-    <div
-        class="lg:bg-gradient-to-r light:from-white light:via-white light:to-gray-200 pt-6 lg:pt-0 dark:bg-gray-900 z-50 pb-5 lg:pb-0 transition-colors duration-500">
+
+    </div>
+    <div class="lg:bg-gradient-to-r light:from-white light:via-white light:to-gray-200 pt-6 lg:pt-0 dark:bg-gray-900 z-50 pb-5 lg:pb-0 transition-colors duration-500">
       <card-row
           v-for="(card, i) in cards"
           v-bind:key="card"
@@ -179,6 +178,7 @@ export default {
       container,
       ufoPos,
       mode,
+      isMobileOnly,
       cards: [
         {
           header: 'Open to New Opportunities',
