@@ -5,19 +5,26 @@
       gradient-to="to-blue-500"
       animation="animate-gradient-xy">
   </section-break>
-  <div id="about" class="relative" ref="container" >
-    <div v-if="score" class="gamify absolute top-2 left-2 z-10 text-white text-xl">SCORE: {{score}}</div>
-    <div v-if="mode.isDarkMode.value" class="hidden lg:block stars z-0 absolute top-0 left-0 w-full h-full"></div>
-    <div v-if="mode.isDarkMode.value" class="hidden lg:block twinkling z-0 absolute top-0 left-0 w-full h-full"></div>
-    <SvgUFO
-        @click="ufoClicked"
-        @mouseenter="randomizePosition"
-        :style="pos"
-        :class="{'bg-red-600 rounded-full': hit}"
-        class="absolute hidden lg:block h-10 w-10 wobble transition-all cursor-crosshair"
-        v-if="mode.isDarkMode.value"
-    />
-    <div class="lg:bg-gradient-to-r light:from-white light:via-white light:to-gray-200 pt-6 lg:pt-0 dark:bg-gray-900 z-50 pb-5 lg:pb-0 transition-colors duration-500">
+  <div @mousemove="rotateShip" @click="moveShip" @keydown="fire" id="about" class="relative" ref="container">
+    <template v-if="mode.isDarkMode.value">
+      <div v-if="score" class="gamify absolute top-2 left-2 z-10 text-white text-xl">SCORE: {{ score }}</div>
+      <div class="hidden lg:block stars z-0 absolute top-0 left-0 w-full h-full"></div>
+      <div class="hidden lg:block twinkling z-0 absolute top-0 left-0 w-full h-full"></div>
+      <img src="https://res.cloudinary.com/ddaji66m6/image/upload/v1612058700/portfolio/spaceship_tlg2od.png" alt="ship" ref="ship" :style="shipPos" class="block ship absolute w-10 h-10 z-20 bg-white select-none"/>
+      <SvgWeapon v-for="(weaponHit, index) in fired" :key="index" v-bind="{...weaponHit}"/>
+
+      <SvgUFO
+          ref="ufo"
+          @click="ufoClicked"
+          @mouseenter="randomizePosition"
+          :style="ufoPos"
+          :class="{'bg-red-600 rounded-full': hit}"
+          class="absolute select-none hidden lg:block h-10 w-10 wobble transition-all cursor-crosshair"
+      />
+      
+    </template>
+    <div
+        class="lg:bg-gradient-to-r light:from-white light:via-white light:to-gray-200 pt-6 lg:pt-0 dark:bg-gray-900 z-50 pb-5 lg:pb-0 transition-colors duration-500">
       <card-row
           v-for="(card, i) in cards"
           v-bind:key="card"
@@ -41,12 +48,14 @@ import CardRow from '@/components/reusable/CardRow'
 import SectionBreak from '@/components/reusable/SectionBreak'
 import useDarkMode from '@/hooks/useDarkMode'
 import SvgUFO from '@/components/icons/SvgUFO'
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import { isMobileOnly } from 'mobile-device-detect'
+import SvgWeapon from '@/components/icons/SvgWeapon'
 
 export default {
   name: 'History',
   components: {
+    SvgWeapon,
     SvgUFO,
     CardRow,
     SectionBreak
@@ -55,25 +64,34 @@ export default {
     const mode = useDarkMode()
     const container = ref(null)
     const score = ref(0)
+    const ufo = ref(null)
+    const ship = ref(null)
     const hit = ref(false)
 
-    const ufoClicked = () => {
+    const fired = reactive([])
+
+    const ufoClicked = (event) => {
       score.value++
       hit.value = true
+      fire(event)
       setTimeout(() => {
         hit.value = false
       }, 1000)
     }
 
-    const pos = ref({
-      top: -1000,
+    const ufoPos = ref({
+      top: '-1000px',
+    })
+    const shipPos = reactive({
+      top: '0px',
+      left: '0px',
     })
 
     const randomizePosition = () => {
       const duration = Math.ceil(Math.random() * 3) + 's'
       const offset = Math.random() < 0.5 ? -100 : 100
 
-      const maxSize = 75;
+      const maxSize = 75
       const size = Math.ceil(Math.random() * maxSize)
       let brightness = (size / maxSize) * 100
       brightness = brightness < 40 ? 40 : brightness
@@ -85,9 +103,9 @@ export default {
         width: `${size}px`,
         'z-index': size >= (maxSize * zIndexThreshold) ? 12 : 1,
         filter: `brightness(${brightness}%)`,
-      };
+      }
 
-      pos.value = {
+      ufoPos.value = {
         top: Math.random() * container.value?.offsetHeight + offset ?? -1000,
         left: Math.random() * container.value?.offsetWidth + offset ?? -1000,
         'animation-duration': duration,
@@ -96,24 +114,70 @@ export default {
       }
     }
 
-    const setAnimationTimeout = () => {
-        setTimeout(() => {
-          randomizePosition()
-          setAnimationTimeout()
-        }, Math.ceil(Math.random() * 10000))
+    const rotateShip = (event) => {
+      const containerOffset = container.value.getBoundingClientRect()
+
+      const pointerBox = ship.value.getBoundingClientRect(),
+          centerY = pointerBox.top + ship.value.offsetHeight - containerOffset.top,
+          centerX = pointerBox.left + ship.value.offsetWidth - containerOffset.left
+
+      const radians = Math.atan2(event.x - centerX, (event.y - containerOffset.top) - centerY)
+      const degree = (radians * (180 / Math.PI) * -1) + 180
+
+      shipPos.transform = `rotate(${degree}deg)`
+      shipPos['transition-duration'] = `0.1s`
     }
 
-    if(!isMobileOnly) {
+    const fire = (event) => {
+      const containerOffset = container.value.getBoundingClientRect()
+      fired.push({
+        startX: shipPos.left,
+        startY: shipPos.top,
+        endX: event.x + 'px',
+        endY: event.y - containerOffset.top + 'px',
+      })
+
+      setTimeout(() => {
+        fired.shift()
+      }, 200)
+    }
+
+    const moveShip = (event) => {
+      if (ufo.value.$el === event.target) {
+        fire(event)
+      } else {
+        const containerOffset = container.value.getBoundingClientRect()
+        shipPos['transition-duration'] = '1s'
+        shipPos.left = event.x + 'px'
+        shipPos.top = event.y - containerOffset.top + 'px'
+      }
+    }
+
+    const setAnimationTimeout = () => {
+      setTimeout(() => {
+        randomizePosition()
+        setAnimationTimeout()
+      }, Math.ceil(Math.random() * 10000))
+    }
+
+    if (!isMobileOnly) {
       setAnimationTimeout()
     }
 
     return {
       randomizePosition,
       ufoClicked,
+      rotateShip,
+      moveShip,
+      fire,
+      shipPos,
+      ship,
+      ufo,
       score,
+      fired,
       hit,
       container,
-      pos,
+      ufoPos,
       mode,
       cards: [
         {
@@ -163,6 +227,10 @@ export default {
 </script>
 
 <style scoped>
+.ship {
+  background: transparent;
+}
+
 @keyframes wobble {
   0%, 100% {
     transform: rotate(-3deg);
@@ -196,7 +264,7 @@ export default {
 }
 
 .wobble {
-  animation: wobble .3s infinite!important;
+  animation: wobble .3s infinite !important;
 }
 
 .stars {
