@@ -181,8 +181,17 @@ export default {
       isMobileOnly,
       cards: [
         {
+          header: 'RocketPlan - Senior Backend Developer',
+          date: 'April 2021-Current',
+          body: `Got the opportunity to join a great team at RocketPlan Technologies as a Senior Backend Developer.`,
+          callToAction: {
+            label: 'More about RocketPlan',
+            url: 'https://rocketplantech.com/'
+          }
+        },
+        {
           header: 'Open to New Opportunities',
-          date: 'Current',
+          date: 'January 2021-March 2021',
           body: `Made the difficult decision to part ways with Sentis. As much as I love the team and culture,
           I felt this was a necessary step to focus my career on development and to put away some of the roles I have been performing.
           Taking some time to learn and create a public github presence, hopefully contributing to the open source community in the process.`,
@@ -197,7 +206,7 @@ export default {
           body: `Promoted to Head of Systems & Solutions and charged with overseeing the Development team and IT footprint.
           Completion of migration to AWS and company to AzureAD & O365.
           Improving upon & implementation of policies and procedures, automating repetitive company process and reduction
-          of technical debt. Laravel and VueJS focused.`
+          of technical debt. Laravel and VueJS focused.`,
         },
         {
           header: 'Sentis - Developer',
