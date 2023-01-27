@@ -181,8 +181,22 @@ export default {
       isMobileOnly,
       cards: [
         {
+          header: 'Atmosphere TV - Staff Software Engineer',
+          date: 'June 2022-Current',
+          body: `(☞ຈل͜ຈ)☞ Role & Title Bump.`,
+        },
+        {
+          header: 'Atmosphere TV - Senior Developer',
+          date: 'January 2022-June 2022',
+          body: `An opportunity arose to join an amazing group of people at Atmosphere TV. Atmosphere TV is headquartered in Austin Texas but has offices around the world.`,
+          callToAction: {
+            label: 'Check them out!',
+            url: 'https://www.atmosphere.tv/'
+          }
+        },
+        {
           header: 'RocketPlan - Senior Backend Developer',
-          date: 'April 2021-Current',
+          date: 'April 2021-December 2021',
           body: `Got the opportunity to join a great team at RocketPlan Technologies as a Senior Backend Developer.`,
           callToAction: {
             label: 'More about RocketPlan',
