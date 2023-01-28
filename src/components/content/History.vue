@@ -5,8 +5,11 @@
       gradient-to="to-blue-500"
       animation="animate-gradient-xy">
   </section-break>
-  <div @mousemove="rotateShip" @click="moveShip" @keydown="fire" id="about" class="relative" ref="container">
-    <div class="hidden lg:block h-full w-full absolute top-0 left-0" v-if="mode.isDarkMode.value && !isMobileOnly">
+  <div id="about" class="relative" ref="container">
+    <div
+        class="hidden lg:block h-full w-full absolute top-0 left-0"
+        v-if="mode.isDarkMode.value && !isMobileOnly"
+        @mousemove="rotateShip" @click="moveShip" @keydown="fire">
       <div v-if="score" class="gamify absolute top-2 left-2 z-10 text-white text-xl">SCORE: {{ score }}</div>
       <div class="stars z-0 absolute top-0 left-0 w-full h-full"></div>
       <div class="twinkling z-0 absolute top-0 left-0 w-full h-full"></div>
@@ -254,15 +257,6 @@ export default {
   background: transparent;
 }
 
-@keyframes wobble {
-  0%, 100% {
-    transform: rotate(-3deg);
-  }
-  50% {
-    transform: rotate(3deg)
-  }
-}
-
 @keyframes move-twink-back {
   from {
     background-position: 0 0;
@@ -284,10 +278,6 @@ export default {
   to {
     transform: scale3d(1, 1, 1);
   }
-}
-
-.wobble {
-  animation: wobble .3s infinite !important;
 }
 
 .stars {

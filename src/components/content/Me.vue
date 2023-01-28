@@ -78,6 +78,10 @@
       </div>
     </div>
     <div class="block absolute inset-y-0 right-0 w-full lg:w-1/2">
+      <img :class="{
+        'sunglasses-visible': mode.isDarkMode.value,
+        'sunglasses-hidden': !mode.isDarkMode.value,
+      }" class="sunglasses absolute wobble" src="/img/sunglasses.png"/>
       <img class="w-full object-cover w-full h-full opacity-25 lg:opacity-100"
            :src="`https://res.cloudinary.com/ddaji66m6/image/upload/f_auto,c_scale,${bannerWidth}/portfolio/banner_dzxfbj.jpg`"
            alt="">
@@ -88,27 +92,29 @@
 <script>
 
 import {isMobileOnly, isMobile, isTablet} from 'mobile-device-detect';
+import { computed } from 'vue';
+import useDarkMode from '@/hooks/useDarkMode';
 
 export default {
   name: "Me",
-  data() {
-    return {}
-  },
-  computed: {
-    bannerWidth() {
+  setup() {
+    const bannerWidth = computed(() => {
+        if(isMobileOnly) {
+          return 'w_800';
+        }
 
-      if(isMobileOnly) {
-        return 'w_800';
-      }
+        if(isMobile || isTablet) {
+          return 'w_1500';
+        }
 
-      if(isMobile || isTablet) {
-        return 'w_1500';
-      }
+        return 'w_auto';
+    });
 
-      return 'w_auto';
+    return {
+      bannerWidth,
+      mode: useDarkMode()
     }
-  }
-
+  },
 }
 </script>
 
@@ -116,6 +122,21 @@ export default {
 
 .angle-split {
   transform: translateX(44%);
+}
+
+.sunglasses {
+  max-width: 12vh;
+  right: 44%;
+}
+
+.sunglasses-visible {
+  top: 36%;
+  transition:all 1s linear;
+}
+
+.sunglasses-hidden {
+  top: -1000px;
+  transition:all 1s linear;
 }
 
 </style>
